@@ -5,7 +5,7 @@
 // loading animation, sunrise/sunset, dynamic icons
 // =============================================
 
-const API_KEY = "50adf6eeb014646d60e341bf5cd42dde";
+const API_KEY = "enter your api key here";
 const BASE_URL  = "https://api.openweathermap.org/data/2.5";
 
 // ---- DOM Elements ----
