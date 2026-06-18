@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WeatherNow</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+
+  <div class="app-wrapper">
+
+    <!-- HEADER -->
+    <header class="app-header">
+      <h1 class="app-title"><i class="fa-solid fa-cloud-sun"></i> WeatherNow</h1>
+      <!-- Unit Toggle -->
+      <div class="unit-toggle">
+        <button class="unit-btn active" id="btnC" onclick="setUnit('C')">°C</button>
+        <button class="unit-btn" id="btnF" onclick="setUnit('F')">°F</button>
+      </div>
+    </header>
+
+    <!-- SEARCH -->
+    <div class="search-section">
+      <div class="search-box">
+        <input type="text" id="cityInput" placeholder="Search city..."/>
+        <button id="locationBtn" title="Use my location"><i class="fa-solid fa-location-crosshairs"></i></button>
+        <button id="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+
+      <!-- Search History -->
+      <div class="history-wrap" id="historyWrap"></div>
+    </div>
+
+    <!-- ERROR -->
+    <p class="error-msg" id="errorMsg"></p>
+
+    <!-- LOADER -->
+    <div class="loader" id="loader">
+      <div class="spinner"></div>
+      <p>Fetching weather...</p>
+    </div>
+
+    <!-- MAIN WEATHER CARD -->
+    <div class="weather-card" id="weatherCard">
+
+      <div class="card-top">
+        <div class="city-info">
+          <h2 id="cityName">--</h2>
+          <p id="dateTime">--</p>
+        </div>
+        <div class="temp-block">
+          <img id="weatherIcon" src="" alt=""/>
+          <div>
+            <h1 id="temperature">--</h1>
+            <p id="weatherDesc">--</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Details Grid -->
+      <div class="details-grid">
+        <div class="detail-box"><i class="fa-solid fa-droplet"></i><p id="humidity">--</p><span>Humidity</span></div>
+        <div class="detail-box"><i class="fa-solid fa-wind"></i><p id="windSpeed">--</p><span>Wind</span></div>
+        <div class="detail-box"><i class="fa-solid fa-eye"></i><p id="visibility">--</p><span>Visibility</span></div>
+        <div class="detail-box"><i class="fa-solid fa-temperature-half"></i><p id="feelsLike">--</p><span>Feels Like</span></div>
+        <div class="detail-box"><i class="fa-solid fa-sun"></i><p id="sunrise">--</p><span>Sunrise</span></div>
+        <div class="detail-box"><i class="fa-solid fa-moon"></i><p id="sunset">--</p><span>Sunset</span></div>
+      </div>
+
+    </div>
+
+    <!-- 5-DAY FORECAST -->
+    <div class="forecast-section" id="forecastSection">
+      <h3 class="forecast-title">5-Day Forecast</h3>
+      <div class="forecast-grid" id="forecastGrid"></div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
